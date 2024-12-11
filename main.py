@@ -6,20 +6,15 @@ api = ""
 bot = Bot(token = api)
 dp = Dispatcher(bot, storage = MemoryStorage())
 
-@dp.message_handler(text= ["бро"])
-async def sevi_message(message):
-    print("sevi message")
-    await message.answer("не брат ты мне, гнида черножопая")
-
 @dp.message_handler(commands=['start'])
 async def start_message(message):
     print('привет! Я бот помогающий твоему здоровью.')
-    await message.answer("здарова здарова, секунду, ща отвечу)")
+    await message.answer("привет! Я бот помогающий твоему здоровью.")
 
 @dp.message_handler()
 async def all_message(message):
     print("Введите команду /start, чтобы начать общение.")
-    await message.answer("ты ебень? нажми /start")
+    await message.answer("Введите команду /start, чтобы начать общение.")
 
 
 if __name__ == "__main__":
